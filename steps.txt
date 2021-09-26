@@ -1,0 +1,5 @@
+0. routing, http, (?:express) // DONE
+1. canvas, render // DONE PARTLY
+2. websokets
+3. physics, game itself, menues, servers
+4. deploy
