@@ -51,7 +51,7 @@ webSocketServer.on('connection', function(ws){
 });
 
 function moveUnit(unit, inputs){
-    let vel = 3;
+    let vel = 10;
     let rt = 300;
     let avel = 0.1;
 
