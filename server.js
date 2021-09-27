@@ -46,12 +46,12 @@ webSocketServer.on('connection', function(ws){
     setTimeout(function next(){
         moveUnit(unit, inputs);
         ws.send(JSON.stringify(unit));
-        setTimeout(next, 10);
-    }, 10);
+        setTimeout(next, 5);
+    }, 5);
 });
 
 function moveUnit(unit, inputs){
-    let vel = 10;
+    let vel = 3;
     let rt = 300;
     let avel = 0.1;
 
