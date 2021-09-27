@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // WEBSOCKET WITH SERVER
 
-    let socket = new WebSocket("ws://localhost:81");
+    let socket = new WebSocket(location.origin.replace(/^http/, 'ws'));
     socket.onopen = ()=>{
         console.log("GOT IT!");
         //console.log("Sending...");
@@ -178,8 +178,8 @@ function getCoords(elem, e){
     let bx = b.left + window.scrollX;
     let by = b.top + window.scrollY;
     return [
-        Math.floor(e.clientX - bx),
-        Math.floor(e.clientY - by)
+        e.clientX - bx,
+        e.clientY - by
     ];
 }
 

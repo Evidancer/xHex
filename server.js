@@ -3,8 +3,7 @@ const {Server} = require('http');
 const router = require('./router.js');
 const WebSocket = require('ws');
 
-const port = 80;
-const wsport = 81;
+const port =  process.env.PORT || 80;
 
 const server = new Server();
 
@@ -16,7 +15,7 @@ server.listen(port, ()=>{
 });
 
 const webSocketServer = new WebSocket.Server({
-    port: wsport
+    server
 });
 
 webSocketServer.on('connection', function(ws){
