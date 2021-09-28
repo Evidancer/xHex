@@ -46,7 +46,7 @@ webSocketServer.on('connection', function(ws){
     let seq = setInterval(function next(){
         moveUnit(unit, inputs);
         ws.send(JSON.stringify(unit));
-    }, 20);
+    }, 10);
     ws.on('close', ()=>{
         clearInterval(seq);
         console.log("User left.");
