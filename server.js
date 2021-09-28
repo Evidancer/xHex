@@ -43,11 +43,14 @@ webSocketServer.on('connection', function(ws){
         inputs = JSON.parse(m.toString('utf-8'));
         //console.log(inputs);
     });
-    setTimeout(function next(){
+    let seq = setInterval(function next(){
         moveUnit(unit, inputs);
         ws.send(JSON.stringify(unit));
-        setTimeout(next, 5);
-    }, 5);
+    }, 20);
+    ws.on('close', ()=>{
+        clearInterval(seq);
+        console.log("User left.");
+    })
 });
 
 function moveUnit(unit, inputs){

@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(ctx);
 
     ctx.imgs = loadImages();
-    ctx.drawImage(ctx.imgs.grid, 0, 0);
-
 
     // GETTING USER INPUTS
     
@@ -55,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let unit = JSON.parse(m.data);
         ctx.clearRect(0, 0, 800, 800);
-        ctx.drawImage(ctx.imgs.grid, 0, 0);
         drawUnit(ctx, unit);
 
         rawInputs.dir = getDir(rawInputs);             // ПОМЕНЯТЬ НА ДВИЖЕНИЕ В ВРАЩЕНИЕ, ВМЕСТО НАПРАВЛЕНИЯ!!!!!!!!!
@@ -147,8 +144,6 @@ function drawImage(ctx, img, x, y, rad){
 }
 
 function loadImages(){
-    let grid = new Image();
-    grid.src = "/public/img/grid.png";
     let tred = new Image();
     tred.src = "/public/img/t-red.png";
     let bred = new Image();
@@ -158,7 +153,6 @@ function loadImages(){
     let bblue = new Image();
     bblue.src = "/public/img/b-blue.png";
     return {
-        grid,
         tred,
         bred,
         tblue,

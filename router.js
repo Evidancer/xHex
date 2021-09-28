@@ -22,7 +22,12 @@ module.exports = function (req, res) {
         }
         res.statusCode=200;
         fs.createReadStream(path).pipe(res);
+        //closeConnetion(res);
     })
+}
+
+function closeConnetion(res){
+    res.connection.end();
 }
 
 function notFound(res) {
